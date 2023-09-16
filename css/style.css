@@ -29,7 +29,7 @@ nav{
 .container
 {
   margin-top:0px;
-  height:78px;
+  height:72px;
   margin-left: 0;
   width: 100%;
 }
@@ -156,47 +156,4 @@ color: black;
 }
 .faq{
   margin-top: 28%;
-}
-
-.container-c {
-  background-color: white;
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 400px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin-top: 10px;
-}
-
-input, textarea {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  background-color: #ff0000;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #cc0000;
-}
-.contact-me{
-      margin-top: 40px;
-      background: url(../images/bg.jpg);
-      height: 600px;
 }
