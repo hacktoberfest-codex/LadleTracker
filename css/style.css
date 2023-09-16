@@ -1,4 +1,9 @@
-.s1{
+
+*{
+
+
+
+}.s1{
     /* height:40%; */
     /* margin: 5 10 10 5; */
     width:100%;
@@ -56,6 +61,99 @@ margin-left: 500px;
      margin-right:0 ;
      float:left;
 }
-.about{
+.abot{
   margin-left: 10px;
+  width: 100%;
+  margin-top: 20px;
+  align-content: center;
+  height: 300px;
+}
+
+.img-abt{
+  /* float:right */
+margin-left: 900px;
+}
+.lead{
+  margin-left:50px ;
+}
+.img-fluid
+{
+  max-width: auto;
+}
+.abt-txt{
+  width: 75%;
+  text-align: left;
+}
+.f-part{
+  margin-top: 20px;
+}
+.faq-heading{
+  border-bottom: #777;
+  text-align: center;
+  padding: 20px 60px;
+  color: rgb(0, 0, 0);
+  /* background-color: beige; */
+}
+.faq-container{
+display: flex;
+justify-content: center;
+flex-direction: column;
+
+}
+.hr-line{
+width: 60%;
+margin: auto;
+color: black;
+}
+/* Style the buttons that are used to open and close the faq-page body */
+.faq-page {
+  /* background-color: #eee; */
+  color: black;
+  cursor: pointer;
+  padding: 30px 20px;
+  width: 60%;
+  border: none;
+  outline: none;
+  transition: 0.05s;
+  margin: auto;
+
+}
+.faq-body{
+  margin: auto;
+  /* text-align: center; */
+ width: 50%; 
+ padding: auto;
+ 
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.faq-page:hover {
+  background-color: #F9F9F9;
+}
+
+/* Style the faq-page panel. Note: hidden by default */
+.faq-body {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+.faq-page:after {
+  content: '\02795';
+  /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796";
+  /* Unicode character for "minus" sign (-) */
+}
+.faq{
+  margin-top: 28%;
 }
