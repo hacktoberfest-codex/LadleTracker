@@ -92,12 +92,12 @@ app = Flask(__name__)
 
 # Load your model here
 model = load_model(
-    "C:\\Users\\nigam\\Downloads\\saved_hdf5_model.h5", compile=False
+    "Team-71\\Backend\\model\\saved_hdf5_model.h5", compile=False
 )  # Disable model compilation
 
 predicted_labels = []
 predicted_labels_timestamps = []
-arr2=[]
+arr2 = []
 
 
 def extract_frames(video, interval):
@@ -138,23 +138,19 @@ def extract_frames(video, interval):
             timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
             predicted_labels_timestamps.append(timestamp)
 
-            arr2=[n for n in predicted_labels if n !='88888']
+            arr2 = [n for n in predicted_labels if n != "88888"]
             print(arr2)
-            arr2_timestamps = [predicted_labels_timestamps[i] for i in range(len(predicted_labels)) if predicted_labels[i] != '88888']
+            arr2_timestamps = [
+                predicted_labels_timestamps[i]
+                for i in range(len(predicted_labels))
+                if predicted_labels[i] != "88888"
+            ]
             print(arr2_timestamps)
 
-            data={
-                "ladle":arr2,
-                "time_date":arr2_timestamps
-            }
+            data = {"ladle": arr2, "time_date": arr2_timestamps}
 
-            Data=pandas.DataFrame(data)
+            Data = pandas.DataFrame(data)
             Data.to_csv("frame.csv")
-
-
-
-
-            
 
         # Increment our frame counter
         frame_counter += 1
@@ -195,7 +191,7 @@ def upload_file():
             "index.html",
             prediction={"text": "Predicted Labels: {}".format(predicted_labels)},
         )
-        
+
     return render_template("index.html", prediction={"text": ""})
 
 
