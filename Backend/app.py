@@ -9,7 +9,7 @@
 # import pandas as pd
 
 
-# app = Flask(__name__)
+# app = Flask(_name_)
 
 # # Load your model here
 # model = load_model(
@@ -72,7 +72,7 @@
 #     return render_template("index.html", prediction={"text": ""})
 
 
-# if __name__ == "__main__":
+# if _name_ == "_main_":
 #     app.run(debug=True)
 
 
@@ -87,12 +87,13 @@ from num_to_label import num_to_label
 import time
 import tempfile
 import pandas
+import mysql.connector as con
 
-app = Flask(__name__)
+app = Flask(_name_)
 
 # Load your model here
 model = load_model(
-    "Team-71\\Backend\\model\\saved_hdf5_model.h5", compile=False
+    "Team-71\\Backend\\model\\final_hdf5_model_3.h5", compile=False
 )  # Disable model compilation
 
 predicted_labels = []
@@ -152,6 +153,21 @@ def extract_frames(video, interval):
             Data = pandas.DataFrame(data)
             Data.to_csv("frame.csv")
 
+            # mysql databasre handle
+            db1 = con.connect(
+                host="localhost", user="root", password="12345", database="ladleworker"
+            )
+
+            cur = db1.cursor()
+            s = "INSERT INTO ladle VALUES(%s,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)"
+            arr = arr2
+            for x in arr:
+                t = [
+                    (x,),
+                ]
+                cur.executemany(s, t)
+                db1.commit()
+
         # Increment our frame counter
         frame_counter += 1
 
@@ -195,5 +211,5 @@ def upload_file():
     return render_template("index.html", prediction={"text": ""})
 
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     app.run(debug=True)
