@@ -78,7 +78,7 @@
 
 import os
 import cv2
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template,send_file
 from keras.models import load_model
 import numpy as np
 import tensorflow as tf
@@ -89,7 +89,7 @@ import tempfile
 import pandas
 import mysql.connector as con
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Load your model here
 model = load_model(
@@ -139,12 +139,12 @@ def extract_frames(video, interval):
             timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
             predicted_labels_timestamps.append(timestamp)
 
-            arr2 = [n for n in predicted_labels if n != "88888"]
+            arr2 = [n for n in predicted_labels if n != "65688"]
             print(arr2)
             arr2_timestamps = [
                 predicted_labels_timestamps[i]
                 for i in range(len(predicted_labels))
-                if predicted_labels[i] != "88888"
+                if predicted_labels[i] != "65688"
             ]
             print(arr2_timestamps)
 
@@ -152,6 +152,7 @@ def extract_frames(video, interval):
 
             Data = pandas.DataFrame(data)
             Data.to_csv("frame.csv")
+            # , mode='a', header=False, index=False
 
             # mysql databasre handle
             db1 = con.connect(
@@ -210,6 +211,10 @@ def upload_file():
 
     return render_template("index.html", prediction={"text": ""})
 
+@app.route('/download_csv')
+def download_csv():
+    return send_file('frame.csv', as_attachment=True)
 
-if _name_ == "_main_":
+
+if __name__ == "__main__":
     app.run(debug=True)
