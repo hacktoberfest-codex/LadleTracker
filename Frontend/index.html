@@ -11,7 +11,7 @@
 </head>
 
 <body> <div id="home">
-    <nav class="navbar navbar-expand-lg navbar-scroll fixed-top shadow-0 border-bottom border-dark Top">
+    <nav class="navbar navbar-expand-lg navbar-scroll fixed-top shadow-0  border-dark Top">
         <div><a href="#home"><img src="images/logo.png" alt="logo" style="width: 100px; height: 100px;"  ></a></div>
         <div class="container">
             <a class="navbar-brand" href="#!"><i class="fab fa-mdb fa-4x"></i></a>
@@ -29,12 +29,13 @@
                         <a class="nav-link" href="#about-us">About-Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#faqs">FAQs</a>
+                        <a class="nav-link" href="faqs.html">FAQs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact-us">Contact us</a>
                     </li>
-                    <button type="button" class="btn btn-danger ms-3">Database</button>
+                    <a href="database.html"><button type="button" class="btn btn-sm btn-danger ms-3">Database</button></a>
+                    <button type="button" class="btn btn-sm btn-danger ms-3">CSU File</button>
                 </ul>
             </div>
         </div>
@@ -89,7 +90,7 @@
 </div>
    
 <!--About-Us-->
- <div id="about-us">
+ <div id="about-us" class="">
     <section id="title" class="gradient-background abot">
            
         <div class="f-part">
@@ -120,18 +121,9 @@
  </div>
     
 
-
-
-
-
-
-
-
-
-
-    <!--FAQs-->
-    <div id="faqs"></div>
-    <div class="faq">        <h1 class="faq-heading" style="color: red;">FAQ'S</h1>
+ <!--FAQs-->
+ <div id="faqs"  style=" ">
+    <div class="faq ">        <h1 class="faq-heading text-danger" >FAQs</h1>
         <section class="faq-container">
             <div class="faq-one">
 
@@ -205,25 +197,37 @@
             <hr class="hr-line">
             <script src="main.js"></script>
         </section>
-    </div>
+    </div></div>
+
+
+
+
+
+
+
+
+
+
+    
  <!--Contact Us-->
-      <div class="contact-me" id="contact-us"><h1 class="c-header" style="color: red; text-align: center;">Contact-Us</h1>
-        <div class="container-c">
-            
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-    
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-    
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-    
-                <button type="submit" class="c-button">Send Us</button>
-            </form>
-        </div></div>
+ <div class="cont-contain"><div class="contact-me" id="contact-us"><h1 class="c-header" style="color: red; text-align: center;">Contact-Us</h1>
+    <div class="container-c">
         
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="c-button">Send Us</button>
+        </form>
+    </div></div>
+    </div>
+      
      <!---->
         <footer>
             <div class="footer">
@@ -238,7 +242,7 @@
             <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about-us">About Us</a></li>
-            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
             <li><a href="#contact-us">Contact-Us</a></li>
             </ul>
             </div>

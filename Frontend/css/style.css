@@ -1,6 +1,6 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 body{
-
+  font-family: 'Mooli', sans-serif;
 overflow-x: hidden;
 
 }.s1{
@@ -84,17 +84,26 @@ margin-left: 900px;
 .f-part{
   margin-top: 20px;
 }
+.faq{margin-top: 0px;}
 .faq-heading{
-  border-bottom: #777;
   text-align: center;
   padding: 20px 60px;
-  color: rgb(0, 0, 0);
+  font-family: 'Mooli', sans-serif;
+  
   /* background-color: beige; */
 }
 .faq-container{
-display: flex;
+display: block;
 justify-content: center;
 flex-direction: column;
+
+}
+@media (max-width:630px){
+  
+  .faq{
+    display: block;
+    margin-top:100px;
+  }
 
 }
 .hr-line{
@@ -111,7 +120,7 @@ color: black;
   width: 60%;
   border: none;
   outline: none;
-  transition: 0.05s;
+  transition: 0.005s;
   margin: auto;
 
 }
@@ -261,3 +270,7 @@ input, textarea {
   .active:after {
     content: "";
 }
+/* .cont-contain{
+
+  margin-top: 30%;
+} */
